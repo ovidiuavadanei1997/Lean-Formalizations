@@ -1,0 +1,14 @@
+{
+  "title": "A conditional Lagrangian clock barrier at the C¹,⅓ threshold for axisymmetric Euler without swirl",
+  "author": "Ovidiu-Neculai Avadanei",
+  "arxiv": "2605.31587v3",
+  "abstract_url": "https://arxiv.org/abs/2605.31587v3",
+  "source_url": "https://arxiv.org/src/2605.31587v3",
+  "source_sha256": {
+    "00README.json": "e7004f7eb9d67456272610cc635276f95e36199acd613679f92567944337ec1f",
+    "Axisymmetric_Euler_with_no-swirl.bbl": "d3ed6a46e12b1d609bcd14a99b731fb99277ed498463343c95e95baff491f030",
+    "Axisymmetric_Euler_with_no-swirl.tex": "1d370f38466894ac3e5728cc1fc663c28fd9ac56f84c0765a8b989bcaa29dcd5",
+    "source.tar": "5cd40c898c81db128a7e6ccb3c194cb5ebc0b569f4891c249bd58102bb651972"
+  },
+  "distribution": "The manuscript source is identified by hashes and public URLs; it is not part of this software package."
+}

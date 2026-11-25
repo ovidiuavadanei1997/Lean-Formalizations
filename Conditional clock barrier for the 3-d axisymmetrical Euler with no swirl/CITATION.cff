@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite this formalization and the accompanying paper."
+type: software
+title: "Conditional Euler clock barrier: Lean formalization"
+version: 0.1.0
+license: Apache-2.0
+authors:
+  - family-names: Avadanei
+    given-names: Ovidiu-Neculai
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Avadanei
+      given-names: Ovidiu-Neculai
+  title: "A conditional Lagrangian clock barrier at the C¹,⅓ threshold for axisymmetric Euler without swirl"
+  journal: arXiv
+  year: 2026
+  url: "https://arxiv.org/abs/2605.31587v3"

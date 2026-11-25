@@ -1,0 +1,13 @@
+Conditional Euler clock barrier
+Copyright (c) 2026 Ovidiu-Neculai Avadanei.
+
+Original code and accompanying software documentation are licensed under
+the Apache License, Version 2.0. See LICENSE for the full terms.
+
+Includes modified portions of openai/NavierStokesAndEuler,
+commit f9e8bc5b38b6e212696e8a30e3e91517af887bbd, under Apache License 2.0.
+Original adaptation and modification notices are retained in the source files.
+See docs/THIRD-PARTY.md for the complete list of adapted files and
+licenses/NavierStokesAndEuler-Apache-2.0.txt for the license.
+
+The mathematical paper is a separate work and is not included in this package.
