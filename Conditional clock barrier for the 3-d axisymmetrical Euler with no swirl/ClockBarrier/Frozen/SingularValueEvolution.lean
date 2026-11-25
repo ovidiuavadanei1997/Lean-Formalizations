@@ -1,0 +1,38 @@
+/-
+Copyright (c) 2026 Ovidiu-Neculai Avadanei.
+See LICENSE for the terms governing original contributions.
+-/
+module
+public import ClockBarrier.Euler.SingularValueEvolution
+/-! # Smallest-singular-value evolution (Lemma 4.1)
+
+Source: arXiv:2605.31587v3, Lemma 4.1.
+See docs/ERRATA-AND-DEVIATIONS.md for the conventions.
+-/
+
+public section
+namespace ClockBarrier.Euler
+open Set
+open scoped Topology NNReal InnerProductSpace BoundedContinuousFunction
+local notation "E₃" => EuclideanSpace ℝ (Fin 3)
+
+/-- Lemma 4.1: the smallest singular value of the actual Euler flow has a right
+derivative, including at repeated singular values. The strain infimum over
+the complete left singular eigenspace is attained. -/
+theorem smallest_singularValue_evolution
+    {α : ℝ≥0} {T : ℝ} {u : ℝ → E₃ →ᵇ E₃} {p : ℝ → E₃ → ℝ}
+    (h : classical_euler_on α T u p) {Φ : ℝ → E₃ → E₃}
+    (hcont : ∀ x, ContinuousOn (fun t => Φ t x) (Ico 0 T))
+    (hode : ∀ x, ∀ t ∈ Ico 0 T,
+      HasDerivWithinAt (fun s => Φ s x) (u t (Φ t x)) (Ici t) t)
+    (hinit : ∀ x, Φ 0 x = x) (a : E₃) {t : ℝ} (ht : t ∈ Ico 0 T) :
+    let F := fun s => fderiv ℝ (Φ s) a
+    let ν := fun s => (F s).toLinearMap.singularValues 2
+    let L := fderiv ℝ (u t) (Φ t a)
+    let S := (1 / 2 : ℝ) • (L + L.adjoint)
+    let G := {r : ℝ | ∃ e : E₃, ‖e‖ = 1 ∧
+      F t ((F t).adjoint e) = ν t ^ 2 • e ∧ r = ⟪e, S e⟫_ℝ}
+    IsLeast G (sInf G) ∧ HasDerivWithinAt ν (ν t * sInf G) (Ici t) t := by
+  exact h.smallest_singularValue_evolution hcont hode hinit a ht
+
+end ClockBarrier.Euler
